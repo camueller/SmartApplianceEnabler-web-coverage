@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/schedule/schedule-factory.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/app/schedule</a> schedule-factory.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.11% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>65/103</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>10/40</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.37% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>64/101</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+Copyright (C) 2017 Axel Müller &lt;axel.mueller@avanux.de&gt;
+&nbsp;
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+&nbsp;
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+&nbsp;
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
+&nbsp;
+import {Schedule} from './schedule';
+import {DayTimeframe} from './day-timeframe';
+import {ConsecutiveDaysTimeframe} from './consecutive-days-timeframe';
+import {TimeOfDayOfWeek} from './time-of-day-of-week';
+import {DayOfWeek} from './day-of-week';
+import {TimeOfDay} from './time-of-day';
+import {TimeUtil} from '../shared/time-util';
+&nbsp;
+export class ScheduleFactory {
+&nbsp;
+<span class="fstat-no" title="function not covered" >  static createEmptySchedule(): Schedule {</span>
+    const schedule: Schedule = <span class="cstat-no" title="statement not covered" >new Schedule();</span>
+<span class="cstat-no" title="statement not covered" >    schedule.timeframeType = DayTimeframe.TYPE;</span>
+//    schedule.consecutiveDaysTimeframe = new ConsecutiveDaysTimeframe();
+//    schedule.dayTimeframe = new DayTimeframe();
+<span class="cstat-no" title="statement not covered" >    return schedule;</span>
+  }
+&nbsp;
+  static toJSON(schedules: Schedule[]): String {
+    for (let i = 0; i &lt; schedules.length; i++) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (schedules[i].dayTimeframe != null) {
+        const start = schedules[i].dayTimeframe.startTime;
+        const end = schedules[i].dayTimeframe.endTime;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (start != null) {
+          schedules[i].dayTimeframe.start = new TimeOfDay(
+            parseInt(start.substr(0, 2), 10),
+            parseInt(start.substr(3, 2), 10), 0);
+        }
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (end != null) {
+          schedules[i].dayTimeframe.end = new TimeOfDay(
+            parseInt(end.substr(0, 2), 10),
+            parseInt(end.substr(3, 2), 10), 0);
+        }
+        schedules[i].dayTimeframe.daysOfWeek = new Array();
+        const dowValues = schedules[i].dayTimeframe.daysOfWeekValues;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (dowValues != null) {
+          for (let j = 0; j &lt; dowValues.length; j++) {
+            schedules[i].dayTimeframe.daysOfWeek.push(new DayOfWeek(dowValues[j]));
+          }
+        }
+      } else <span class="cstat-no" title="statement not covered" >if (schedules[i].consecutiveDaysTimeframe != null) {</span>
+        const start = <span class="cstat-no" title="statement not covered" >schedules[i].consecutiveDaysTimeframe.startTime;</span>
+        const end = <span class="cstat-no" title="statement not covered" >schedules[i].consecutiveDaysTimeframe.endTime;</span>
+<span class="cstat-no" title="statement not covered" >        schedules[i].consecutiveDaysTimeframe['start'] = new TimeOfDayOfWeek(</span>
+          schedules[i].consecutiveDaysTimeframe.startDayOfWeek,
+          parseInt(start.substr(0, 2), 10),
+          parseInt(start.substr(3, 2), 10), 0);
+<span class="cstat-no" title="statement not covered" >        schedules[i].consecutiveDaysTimeframe['end'] = new TimeOfDayOfWeek(</span>
+          schedules[i].consecutiveDaysTimeframe.endDayOfWeek,
+          parseInt(end.substr(0, 2), 10),
+          parseInt(end.substr(3, 2), 10), 0);
+      }
+    }
+&nbsp;
+    let content = JSON.stringify(schedules);
+    content = content.replace(/dayTimeframe/g, 'timeframe');
+    content = content.replace(/consecutiveDaysTimeframe/g, 'timeframe');
+    return content;
+  }
+&nbsp;
+  static toSchedule(rawSchedule: any): Schedule {
+    console.log('rawSchedule ' + JSON.stringify(rawSchedule));
+    const schedule = new Schedule();
+    schedule.enabled = rawSchedule.enabled;
+    schedule.minRunningTime = rawSchedule.minRunningTime;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (schedule.minRunningTime != null) {
+      schedule.minRunningTimeHHMM = TimeUtil.toHourMinute(rawSchedule.minRunningTime);
+    }
+    schedule.maxRunningTime = rawSchedule.maxRunningTime;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (schedule.maxRunningTime != null) {
+<span class="cstat-no" title="statement not covered" >      schedule.maxRunningTimeHHMM = TimeUtil.toHourMinute(rawSchedule.maxRunningTime);</span>
+    }
+    if (rawSchedule.timeframe['@class'] === DayTimeframe.TYPE) {
+      schedule.timeframeType = DayTimeframe.TYPE;
+      schedule.dayTimeframe = ScheduleFactory.createDayTimeframe(rawSchedule.timeframe);
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (rawSchedule.timeframe['@class'] === ConsecutiveDaysTimeframe.TYPE) {
+      schedule.timeframeType = ConsecutiveDaysTimeframe.TYPE;
+      schedule.consecutiveDaysTimeframe = ScheduleFactory.createConsecutiveDaysTimeframe(rawSchedule.timeframe);
+    }
+    console.log('schedule ' + JSON.stringify(schedule));
+    return schedule;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  static fromForm(</span>rawSchedules: any): Schedule[] {
+<span class="cstat-no" title="statement not covered" >    console.log('FROM_FORM: ' + JSON.stringify(rawSchedules));</span>
+    const schedules = <span class="cstat-no" title="statement not covered" >new Array();</span>
+<span class="cstat-no" title="statement not covered" >    for (const rawSchedule<span class="cstat-no" title="statement not covered" > of rawSchedules.schedules) {</span></span>
+      const schedule = <span class="cstat-no" title="statement not covered" >new Schedule();</span>
+<span class="cstat-no" title="statement not covered" >      schedule.enabled = rawSchedule.enabled;</span>
+<span class="cstat-no" title="statement not covered" >      schedule.timeframeType = rawSchedule.timeframeType;</span>
+<span class="cstat-no" title="statement not covered" >      if (rawSchedule.timeframeType === DayTimeframe.TYPE) {</span>
+<span class="cstat-no" title="statement not covered" >        schedule.dayTimeframe = new DayTimeframe();</span>
+<span class="cstat-no" title="statement not covered" >        schedule.dayTimeframe.daysOfWeekValues = rawSchedule.dayTimeframe.daysOfWeekValues;</span>
+<span class="cstat-no" title="statement not covered" >        schedule.dayTimeframe.startTime = rawSchedule.dayTimeframe.startTime;</span>
+<span class="cstat-no" title="statement not covered" >        schedule.dayTimeframe.endTime = rawSchedule.dayTimeframe.endTime;</span>
+<span class="cstat-no" title="statement not covered" >        if (rawSchedule.dayTimeframe.minRunningTime != null &amp;&amp; rawSchedule.dayTimeframe.minRunningTime !== '') {</span>
+<span class="cstat-no" title="statement not covered" >          schedule.minRunningTime = TimeUtil.toSeconds(rawSchedule.dayTimeframe.minRunningTime);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (rawSchedule.dayTimeframe.maxRunningTime != null &amp;&amp; rawSchedule.dayTimeframe.maxRunningTime !== '') {</span>
+<span class="cstat-no" title="statement not covered" >          schedule.maxRunningTime = TimeUtil.toSeconds(rawSchedule.dayTimeframe.maxRunningTime);</span>
+        }
+      } else <span class="cstat-no" title="statement not covered" >if (rawSchedule.timeframeType === ConsecutiveDaysTimeframe.TYPE) {</span>
+<span class="cstat-no" title="statement not covered" >        schedule.consecutiveDaysTimeframe = new ConsecutiveDaysTimeframe();</span>
+<span class="cstat-no" title="statement not covered" >        schedule.consecutiveDaysTimeframe.startDayOfWeek = rawSchedule.consecutiveDaysTimeframe.startDayOfWeek;</span>
+<span class="cstat-no" title="statement not covered" >        schedule.consecutiveDaysTimeframe.startTime = rawSchedule.consecutiveDaysTimeframe.startTime;</span>
+<span class="cstat-no" title="statement not covered" >        schedule.consecutiveDaysTimeframe.endDayOfWeek = rawSchedule.consecutiveDaysTimeframe.endDayOfWeek;</span>
+<span class="cstat-no" title="statement not covered" >        schedule.consecutiveDaysTimeframe.endTime = rawSchedule.consecutiveDaysTimeframe.endTime;</span>
+<span class="cstat-no" title="statement not covered" >        if (rawSchedule.consecutiveDaysTimeframe.minRunningTime != null</span>
+          &amp;&amp; rawSchedule.consecutiveDaysTimeframe.minRunningTime !== '') {
+<span class="cstat-no" title="statement not covered" >          schedule.minRunningTime = TimeUtil.toSeconds(rawSchedule.consecutiveDaysTimeframe.minRunningTime);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (rawSchedule.consecutiveDaysTimeframe.maxRunningTime != null</span>
+          &amp;&amp; rawSchedule.consecutiveDaysTimeframe.maxRunningTime !== '') {
+<span class="cstat-no" title="statement not covered" >          schedule.maxRunningTime = TimeUtil.toSeconds(rawSchedule.consecutiveDaysTimeframe.maxRunningTime);</span>
+        }
+      }
+<span class="cstat-no" title="statement not covered" >      schedules.push(schedule);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    console.log('SCHEDULE: ' + JSON.stringify(schedules));</span>
+<span class="cstat-no" title="statement not covered" >    return schedules;</span>
+  }
+&nbsp;
+  static createDayTimeframe(rawTimeframe: any): DayTimeframe {
+    console.log('createDayTimeframe from ' + JSON.stringify(rawTimeframe));
+    const dayTimeframe = new DayTimeframe();
+    dayTimeframe.daysOfWeekValues = new Array();
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (rawTimeframe.daysOfWeek != null) {
+      for (let i = 0; i &lt; rawTimeframe.daysOfWeek.length; i++) {
+        dayTimeframe.daysOfWeekValues.push(rawTimeframe.daysOfWeek[i].value);
+      }
+    }
+    dayTimeframe.startTime = TimeUtil.timestring(rawTimeframe.start.hour, rawTimeframe.start.minute);
+    dayTimeframe.endTime = TimeUtil.timestring(rawTimeframe.end.hour, rawTimeframe.end.minute);
+    return dayTimeframe;
+  }
+&nbsp;
+  static createConsecutiveDaysTimeframe(rawTimeframe: any): ConsecutiveDaysTimeframe {
+    console.log('createConsecutiveDaysTimeframe from ' + JSON.stringify(rawTimeframe));
+    const consecutiveDaysTimeframe = new ConsecutiveDaysTimeframe();
+    consecutiveDaysTimeframe.startDayOfWeek = rawTimeframe.start.dayOfWeek;
+    consecutiveDaysTimeframe.startTime = TimeUtil.timestring(rawTimeframe.start.hour, rawTimeframe.start.minute);
+    consecutiveDaysTimeframe.endDayOfWeek = rawTimeframe.end.dayOfWeek;
+    consecutiveDaysTimeframe.endTime = TimeUtil.timestring(rawTimeframe.end.hour, rawTimeframe.end.minute);
+    return consecutiveDaysTimeframe;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 31 2017 07:19:54 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/control/control-factory.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/app/control</a> control-factory.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.92% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>72/106</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>18/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">61.54% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.62% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>71/105</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
+Copyright (C) 2017 Axel Müller &lt;axel.mueller@avanux.de&gt;
+&nbsp;
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+&nbsp;
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+&nbsp;
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
+&nbsp;
+import {Control} from './control';
+import {StartingCurrentSwitch} from './starting-current-switch';
+import {Switch} from './switch';
+import {ModbusSwitch} from './modbus-switch';
+import {HttpSwitch} from './http-switch';
+import {AlwaysOnSwitch} from './always-on-switch';
+import {ControlDefaults} from './control-defaults';
+import {MockSwitch} from './mock-switch';
+&nbsp;
+export class ControlFactory {
+&nbsp;
+  static defaultsFromJSON(rawControlDefaults: any): ControlDefaults {
+    console.log('ControlDefaults (JSON): ' + JSON.stringify(rawControlDefaults));
+    const controlDefaults = new ControlDefaults();
+    controlDefaults.startingCurrentSwitchDefaults_powerThreshold
+      = rawControlDefaults.startingCurrentSwitchDefaults.powerThreshold;
+    controlDefaults.startingCurrentSwitchDefaults_startingCurrentDetectionDuration
+      = rawControlDefaults.startingCurrentSwitchDefaults.startingCurrentDetectionDuration;
+    controlDefaults.startingCurrentSwitchDefaults_finishedCurrentDetectionDuration
+      = rawControlDefaults.startingCurrentSwitchDefaults.finishedCurrentDetectionDuration;
+    controlDefaults.startingCurrentSwitchDefaults_minRunningTime
+      = rawControlDefaults.startingCurrentSwitchDefaults.minRunningTime;
+    console.log('ControlDefaults (TYPE): ' + JSON.stringify(controlDefaults));
+    return controlDefaults;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  static createEmptyControl(): Control {</span>
+<span class="cstat-no" title="statement not covered" >    return new Control();</span>
+  }
+&nbsp;
+  static fromJSON(rawControl: any): Control {
+    console.log('Control (JSON): ' + JSON.stringify(rawControl));
+    const control = new Control();
+    if (rawControl['@class'] === StartingCurrentSwitch.TYPE) {
+      control.startingCurrentDetection = true;
+      control.startingCurrentSwitch = ControlFactory.createStartingCurrentSwitch(rawControl);
+      ControlFactory.fromJSONbyType(control, rawControl.control);
+    } else {
+      ControlFactory.fromJSONbyType(control, rawControl);
+    }
+    console.log('Control (TYPE): ' + JSON.stringify(control));
+    return control;
+  }
+&nbsp;
+  static toJSON(control: Control): string {
+    console.log('Control (TYPE): ' + JSON.stringify(control));
+    let controlUsed: any;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (control.startingCurrentSwitch != null) {
+<span class="cstat-no" title="statement not covered" >      control.startingCurrentSwitch['control'] = this.getControlByType(control);</span>
+<span class="cstat-no" title="statement not covered" >      controlUsed = control.startingCurrentSwitch;</span>
+<span class="cstat-no" title="statement not covered" >      if (controlUsed.powerThreshold === '') {</span>
+<span class="cstat-no" title="statement not covered" >        controlUsed.powerThreshold = null;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (controlUsed.startingCurrentDetectionDuration === '') {</span>
+<span class="cstat-no" title="statement not covered" >        controlUsed.startingCurrentDetectionDuration = null;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (controlUsed.finishedCurrentDetectionDuration === '') {</span>
+<span class="cstat-no" title="statement not covered" >        controlUsed.finishedCurrentDetectionDuration = null;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (controlUsed.minRunningTime === '') {</span>
+<span class="cstat-no" title="statement not covered" >        controlUsed.minRunningTime = null;</span>
+      }
+    } else {
+      controlUsed = this.getControlByType(control);
+    }
+    let rawControl: string;
+    if (controlUsed != null) {
+      rawControl = JSON.stringify(controlUsed);
+    }
+    console.log('Control (JSON): ' + rawControl);
+    return rawControl;
+  }
+&nbsp;
+  static fromJSONbyType(control: Control, rawControl: any) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (rawControl != null) {
+      control.type = rawControl['@class'];
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (control.type === AlwaysOnSwitch.TYPE) {
+<span class="cstat-no" title="statement not covered" >        control.alwaysOnSwitch = ControlFactory.createAlwaysOnSwitch(rawControl);</span>
+      } else <span class="missing-if-branch" title="if path not taken" >I</span>if (control.type === MockSwitch.TYPE) {
+<span class="cstat-no" title="statement not covered" >        control.mockSwitch = ControlFactory.createMockSwitch(rawControl);</span>
+      } else if (control.type === Switch.TYPE) {
+        control.switch_ = ControlFactory.createSwitch(rawControl);
+      } else <span class="missing-if-branch" title="if path not taken" >I</span>if (control.type === ModbusSwitch.TYPE) {
+<span class="cstat-no" title="statement not covered" >        control.modbusSwitch = ControlFactory.createModbusSwitch(rawControl);</span>
+      } else <span class="missing-if-branch" title="if path not taken" >I</span>if (control.type === HttpSwitch.TYPE) {
+<span class="cstat-no" title="statement not covered" >        control.httpSwitch = ControlFactory.createHttpSwitch(rawControl);</span>
+      }
+    }
+  }
+&nbsp;
+  static getControlByType(control: Control): any {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (control.type === AlwaysOnSwitch.TYPE) {
+<span class="cstat-no" title="statement not covered" >      return control.alwaysOnSwitch;</span>
+    } else <span class="missing-if-branch" title="if path not taken" >I</span>if (control.type === MockSwitch.TYPE) {
+<span class="cstat-no" title="statement not covered" >      return control.mockSwitch;</span>
+    } else if (control.type === Switch.TYPE) {
+      return control.switch_;
+    } else <span class="missing-if-branch" title="if path not taken" >I</span>if (control.type === ModbusSwitch.TYPE) {
+<span class="cstat-no" title="statement not covered" >      return control.modbusSwitch;</span>
+    } else <span class="missing-if-branch" title="if path not taken" >I</span>if (control.type === HttpSwitch.TYPE) {
+<span class="cstat-no" title="statement not covered" >      return control.httpSwitch;</span>
+    }
+    return null;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  static createAlwaysOnSwitch(</span>rawAlwaysOnSwitch: any): AlwaysOnSwitch {
+<span class="cstat-no" title="statement not covered" >    return new AlwaysOnSwitch();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  static createMockSwitch(</span>rawMockSwitch: any): MockSwitch {
+<span class="cstat-no" title="statement not covered" >    return new MockSwitch();</span>
+  }
+&nbsp;
+  static createStartingCurrentSwitch(rawStartingCurrentSwitch: any): StartingCurrentSwitch {
+    const startingCurrentSwitch = new StartingCurrentSwitch();
+    startingCurrentSwitch.powerThreshold = rawStartingCurrentSwitch.powerThreshold;
+    startingCurrentSwitch.startingCurrentDetectionDuration = rawStartingCurrentSwitch.startingCurrentDetectionDuration;
+    startingCurrentSwitch.finishedCurrentDetectionDuration = rawStartingCurrentSwitch.finishedCurrentDetectionDuration;
+    startingCurrentSwitch.minRunningTime = rawStartingCurrentSwitch.minRunningTime;
+    return startingCurrentSwitch;
+  }
+&nbsp;
+  static createSwitch(rawSwitch: any): Switch {
+    const switch_ = new Switch();
+    switch_.gpio = rawSwitch.gpio;
+    switch_.reverseStates = rawSwitch.reverseStates;
+    return switch_;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  static createModbusSwitch(</span>rawModbusSwitch: any): ModbusSwitch {
+    const modbusSwitch = <span class="cstat-no" title="statement not covered" >new ModbusSwitch();</span>
+<span class="cstat-no" title="statement not covered" >    modbusSwitch.slaveAddress = rawModbusSwitch.slaveAddress;</span>
+<span class="cstat-no" title="statement not covered" >    modbusSwitch.registerAddress = rawModbusSwitch.registerAddress;</span>
+<span class="cstat-no" title="statement not covered" >    return modbusSwitch;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  static createHttpSwitch(</span>rawHttpSwitch: any): HttpSwitch {
+    const httpSwitch = <span class="cstat-no" title="statement not covered" >new HttpSwitch();</span>
+<span class="cstat-no" title="statement not covered" >    httpSwitch.onUrl = rawHttpSwitch.onUrl;</span>
+<span class="cstat-no" title="statement not covered" >    httpSwitch.offUrl = rawHttpSwitch.offUrl;</span>
+<span class="cstat-no" title="statement not covered" >    httpSwitch.username = rawHttpSwitch.username;</span>
+<span class="cstat-no" title="statement not covered" >    httpSwitch.password = rawHttpSwitch.password;</span>
+<span class="cstat-no" title="statement not covered" >    httpSwitch.contentType = rawHttpSwitch.contentType;</span>
+<span class="cstat-no" title="statement not covered" >    httpSwitch.onData = rawHttpSwitch.onData;</span>
+<span class="cstat-no" title="statement not covered" >    httpSwitch.offData = rawHttpSwitch.offData;</span>
+<span class="cstat-no" title="statement not covered" >    return httpSwitch;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 31 2017 07:19:54 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
